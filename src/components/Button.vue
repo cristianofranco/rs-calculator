@@ -1,8 +1,9 @@
 <template>
-  <button class="w-16 h-16 rounded-full flex items-center justify-center text-2xl
-    cursor-pointer select-none button-bg-shadow" :style="{
-      color: computedTextColor
-    }">
+  <button :class="[
+    'w-16 h-16 shadow-lg rounded-full flex items-center justify-center text-2xl cursor-pointer',
+    { 'operator-bg-shadow': isOperator },
+    { 'equals-bg-shadow': isEquals },
+    ]" :style="{ color: computedTextColor }">
     <template v-if="iconPath">
       <img :src="iconPath" :alt="label" :style="{ width: iconWidth }">
     </template>
